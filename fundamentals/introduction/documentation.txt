@@ -1,0 +1,13 @@
+len(sequence) returns the length (number of items) in a sequence.
+max(sequence) returns the highest value in a sequence.
+min(sequence) returns the lowest value in a sequence.
+sorted(sequence) returns a sorted sequence
+
+The following are some commonly used list methods:
+list.append(value) appends a value to the end of the list.
+list.pop(index) remove a value at given position. if no parameter is passed, it will remove the last value in the list.
+list.index(value) returns the index (position) of the given value if it exists in the list and raises an error if it does not exist.
+list.reverse() reverses the order of the elements, in place.*
+list.sort() sorts the items in order of least to greatest, or alphabetically for strings, in place.*
+   * "In place" means it changes that same array, instead of returning a new array.
+
