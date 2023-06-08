@@ -13,3 +13,14 @@ fave_food1 = "sushi"
 fave_food2 = "pizza"
 print('I love to eat {} and {}.'.format(fave_food1, fave_food2)) # with .format()
 print(f'I love to eat {fave_food1} and {fave_food2}.') # with an f string
+
+name = "Robyn"
+print(name.upper())
+print(name.casefold())
+print(name.islower())
+print(name.lower())
+print(name.split())
+print(name.replace('R','b'))
+print(name.partition('8'))
+print(name.isalnum())
+print(name.find('R'))
