@@ -11,7 +11,7 @@
         - Numbers
         - Strings
     - Composite
-        - List 
+        - List
             - initialize
             - access value
             - change value
@@ -39,7 +39,7 @@
     - increment
     - break
     - continue
-    - sequence.......................
+    - sequence
 - while loop
     - start
     - stop
@@ -47,7 +47,7 @@
 - function
     - parameter
     - argument
-    - return.........................
+    - return
 
 * Bonus: Errors
 
@@ -58,7 +58,7 @@
 - IndentationError: unexpected indent
 - AttributeError: 'tuple' object has no attribute 'pop'
 - AttributeError: 'tuple' object has no attribute 'append'
-- Tuples........................
-    - change value.......................
+- Tuples
+    - change value
     - add value......................
-    - delete value.......................
+    - delete value

@@ -1,13 +1,13 @@
 num1 = 42 #variable declaration, number data type
 num2 = 2.3 #variable declaration, number data type
 boolean = True #variable declaration, boolean data type
-string = 'Hello World' #variable declaration, string data type
-pizza_toppings = ['Pepperoni', 'Sausage', 'Jalepenos', 'Cheese', 'Olives'] #variable declaration, string data type, list, initialize list
-person = {'name': 'John', 'location': 'Salt Lake', 'age': 37, 'is_balding': False} #variable declaration, number data type, string data type, boolean data type, dictionary, initialize dictionary
-fruit = ('blueberry', 'strawberry', 'banana') #variable declaration, string data type, tuple, initialize tuple
+string = 'Hello World' #variable declaration, string data type, sequence
+pizza_toppings = ['Pepperoni', 'Sausage', 'Jalepenos', 'Cheese', 'Olives'] #variable declaration, string data type, list, initialize list, sequence
+person = {'name': 'John', 'location': 'Salt Lake', 'age': 37, 'is_balding': False} #variable declaration, number data type, string data type, boolean data type, dictionary, initialize dictionary, sequence
+fruit = ('blueberry', 'strawberry', 'banana') #variable declaration, string data type, tuple, initialize tuple, sequence
 print(type(fruit)) #log statement, type check, access tuple value
 print(pizza_toppings[1]) #log statement, access list value
-pizza_toppings.append('Mushrooms') #add list value
+pizza_toppings.append('Mushrooms') #add list value, function return
 print(person['name']) #log statement, access dictionary value
 person['name'] = 'George' #change dictionary value, delete dictionary value
 person['eye_color'] = 'blue' #add dictionary value
@@ -36,11 +36,11 @@ while(x < 5): #while loop start
     print(x) #log statement, while loop stop
     x += 1 #while loop increment
 
-pizza_toppings.pop() #delete list value
-pizza_toppings.pop(1) #delete list value
+pizza_toppings.pop() #delete list value, function return
+pizza_toppings.pop(1) #delete list value, function return
 
 print(person) #log statement
-person.pop('eye_color') #delete dictionary value
+person.pop('eye_color') #delete dictionary value, function return
 print(person) #log statement
 
 for topping in pizza_toppings: #for loop start, for loop sequence
@@ -71,7 +71,7 @@ print_hello_x_or_ten_times(4) #functin, function argument
 
 
 """
-Bonus section 
+Bonus section
 """
 #multiline comment
 
@@ -82,6 +82,6 @@ fruit[0] = 'cranberry' #single-line comment, change tuple value, delete tuple va
 print(person['favorite_team']) #log statement, single-line comment, KeyError: 'favorite_team'
 print(pizza_toppings[7]) #log statement, single-line comment, IndexError: list index out of range
   print(boolean) #log statement, single-line comment, IndentationError: unexpected indent
-fruit.append('raspberry') #single-line comment, AttributeError: 'tuple' object has no attribute 'append'
-fruit.pop(1) #single-line comment, AttributeError: 'tuple' object has no attribute 'pop'
+fruit.append('raspberry') #single-line comment, AttributeError: 'tuple' object has no attribute 'append', function return
+fruit.pop(1) #single-line comment, AttributeError: 'tuple' object has no attribute 'pop', function return
 """ #multi-line comment
