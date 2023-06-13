@@ -198,3 +198,45 @@ while y > 0:
 else:		# only executes on a clean exit from the while loop (i.e. not a break)
     print("Final else statement")
 # output: 3, 2, 1
+
+
+The following is a general summary of the characteristics of a Python dictionary:
+
+   A dictionary is an unordered collection of objects.
+   Values are accessed using a key (typically a string).
+   A dictionary can shrink or grow as needed.
+   The contents of dictionaries can be modified.
+   Dictionaries can be nested.
+   Sequence operations such as slice cannot be used with dictionaries.
+
+#literal notation
+person = {"first": "Ada", "last": "Lovelace", "age": 42, "is_organ_donor": True}
+capitals = {} #create an empty dictionary
+
+#literal notation
+person = {"first": "Ada", "last": "Lovelace", "age": 42, "is_organ_donor": True}
+capitals = {} #create an empty dictionary then add values
+capitals["svk"] = "Bratislava"
+capitals["deu"] = "Berlin"
+capitals["dnk"] = "Copenhagen"
+
+In the examples above, we created two dictionaries in two different ways:
+
+   Using literal notation. The key-value pairs are enclosed by curly brackets. The pairs are separated by commas. The first value of a pair is a key, which is followed by a colon character and a value. The "first_name" string is a key and the "Ada" string is a value.
+
+   Creating an empty dictionary and adding some values. The keys are inside the square brackets, the values are located on the right side of the assignment.
+
+my_list[0] = 4
+my_dict["some_string"] = some_value
+
+Python includes the following standalone functions for dictionaries:
+
+   len() - give the total length of the dictionary.
+   str() - produces a string representation of a dictionary.
+   type() - returns the type of the passed variable. If passed variable is a dictionary, it will then return a dict type.
+
+Here are some very useful Python dictionary methods:
+
+   .clear() - removes all elements from the dictionary
+   .get(key, default=None) - A safe way to get a value, if the key might not exist. Returns the value for the specified key or None (or a value you specify) if the key is not in the dictionary.
+   .update(pairs_to_update) - Add and update multiple key-value pairs at once, by passing in another dictionary of the pairs to update and add.
