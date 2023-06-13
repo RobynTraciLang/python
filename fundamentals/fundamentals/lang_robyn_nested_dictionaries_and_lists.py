@@ -38,22 +38,18 @@ students = [
     ]
 
 def iterate_dictionary(list_of_dictionaries):
-    for i in range(len(list_of_dictionaries)):
-        each_key = list_of_dictionaries[i]
-    print(each_key)
-    #     for "value" in range(each_key):
-    #         values = "value"
-    #         each_value = list_of_dictionaries[i]["value"]
-    # print(each_value)
-
+    for i in range(len(students)):
+        dict = students[i]
+        for key, value in dict.items():
+            print(key, ' - ', value)
 
 iterate_dictionary(students)
-# should output: (it's okay if each key-value pair ends up on 2 separate lines;
+# should output: (it's okay if each key-value pair ends up on 2 separate lines; (DONE)
 # bonus to get them to appear exactly as below!)
 # first_name - Michael, last_name - Jordan
 # first_name - John, last_name - Rosales
 # first_name - Mark, last_name - Guillen
-# first_name - KB, last_name - Tonel
+# first_name - KB, last_name - Tonel (DONE)
 
 # 3
 # Create a function iterateDictionary2(key_name, some_list) that, given a list of dictionaries and a key name, the function prints the value stored in that key for each dictionary. For example, iterateDictionary2('first_name', students) should output:
@@ -65,8 +61,22 @@ iterate_dictionary(students)
 # Jordan
 # Rosales
 # Guillen
-# Tonel
+# Tonel (DONE)
+
+students = [
+        {'first_name':  'Michael', 'last_name' : 'Jordan'},
+        {'first_name' : 'John', 'last_name' : 'Rosales'},
+        {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+        {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
+
 def iterate_dictionary2(key_name, some_list):
+    for dictionary in some_list:
+        if key_name in dictionary:
+            print(dictionary[key_name])
+
+iterate_dictionary2('first_name', students)
+iterate_dictionary2('last_name', students)
 
 
 # 4
