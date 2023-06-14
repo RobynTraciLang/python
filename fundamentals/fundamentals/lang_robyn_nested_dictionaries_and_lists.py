@@ -26,6 +26,7 @@ Change the value 10 in x to 15. Once you're done, x should now be [ [5,2,3], [15
 Change the last_name of the first student from 'Jordan' to 'Bryant' (Done)
 In the sports_directory, change 'Messi' to 'Andres' (Done)
 Change the value 20 in z to 30 (Done)
+(#1 DONE)
 '''
 
 # 2
@@ -49,7 +50,10 @@ iterate_dictionary(students)
 # first_name - Michael, last_name - Jordan
 # first_name - John, last_name - Rosales
 # first_name - Mark, last_name - Guillen
-# first_name - KB, last_name - Tonel (DONE)
+# first_name - KB, last_name - Tonel
+# (#2 DONE, not with bonus though)
+
+
 
 # 3
 # Create a function iterateDictionary2(key_name, some_list) that, given a list of dictionaries and a key name, the function prints the value stored in that key for each dictionary. For example, iterateDictionary2('first_name', students) should output:
@@ -61,7 +65,7 @@ iterate_dictionary(students)
 # Jordan
 # Rosales
 # Guillen
-# Tonel (DONE)
+# Tonel
 
 students = [
         {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -74,9 +78,11 @@ def iterate_dictionary2(key_name, some_list):
     for dictionary in some_list:
         if key_name in dictionary:
             print(dictionary[key_name])
+    print()
 
 iterate_dictionary2('first_name', students)
 iterate_dictionary2('last_name', students)
+# (#3 DONE)
 
 
 # 4
@@ -87,6 +93,11 @@ dojo = {
 }
 
 def print_info(some_dict):
+    for key, value in some_dict.items():
+        print(f'{len(value)} {key.upper()}')
+        for item in value:
+            print(item)
+        print()
 
 
 print_info(dojo)
@@ -109,3 +120,4 @@ print_info(dojo)
 # Patrick
 # Minh
 # Devon
+# (#4 DONE)
