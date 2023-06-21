@@ -1,30 +1,24 @@
-'''
-Assignment: User
-For this assignment you will create the user class and add a couple methods!
-
-Attributes:
-On instantiation of a user, the following attributes should be passed in as arguments:
-
-first_name
-last_name
-email
-age
-'''
-
 class User:
-    def __init__(self, first_name, last_name, email, age, is_reward_member, gold_card_points):
-        self.first_name = 'robyn'
-        self.last_name = 'lang'
-        self.email = 'jetblackkinks@gmail.com'
-        self.age = 44
+
+    def __init__(self, first_name, last_name, email, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.age = age
+
         self.is_reward_member = False
         self.gold_card_points = 0
 
-    def display_info(self, attribute):
-        print()
+    def display_info(self):
+            print(f'First Name: {self.first_name}')
+            print(f'Last Name: {self.last_name}')
+            print(f'Email: {self.email}')
+            print(f'Age: {self.age}')
+            print(f'Is Reward Member: {self.is_reward_member}')
+            print(f'Gold Card Points: {self.gold_card_points}')
 
     def enroll(self):
-        if(self.is_reward_member = True):
+        if self.is_reward_member == True:
             print('User already a member.')
         else:
             self.is_reward_member = True
@@ -36,31 +30,42 @@ class User:
         else:
             self.gold_card_points = 0
 
-robyn = User()
+robyn = User('Robyn', 'Lang', 'rtlang@oakwood.edu', 44)
 
-display_info(robyn)
+robyn.display_info()
 
-enroll(robyn)
+robyn.enroll()
 
-monique = User()
+monique = User('Monique', 'Morales-Mason', 'mmoralesmason@oakwood.edu', 42)
 
-michelle = User()
+michelle = User('Michelle', 'Ramey', 'mramey@oakwood.edu', 64)
 
-spend_points(robyn, 50)
+robyn.spend_points(50)
 
-enroll(monique)
+monique.enroll()
 
-spend_points(monique, 80)
+monique.spend_points(80)
 
-display_info(robyn)
-display_info(monique)
-display_info(michelle)
+robyn.display_info()
+monique.display_info()
+michelle.display_info()
 
-enroll(robyn)
+robyn.enroll()
 
-spend_points(michelle)
+michelle.spend_points(40)
 
 '''
+Assignment: User
+For this assignment you will create the user class and add a couple methods!
+
+Attributes:
+On instantiation of a user, the following attributes should be passed in as arguments:
+
+first_name
+last_name
+email
+age
+
 Also include default attributes:
 
 is_rewards_member - default value of False
