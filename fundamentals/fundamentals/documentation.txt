@@ -1,0 +1,14 @@
+Everything Must Change!
+Especially the self. Let's return to our shoe store. Where we left off, our Shoe class was able to:
+
+    Create new kinds of shoes with custom attributes
+    Change the attributes in the global scope.
+    Ideally your store application will be able to keep track of and handle much more than that, or you might as well go back to book keeping with that archaic pen and paper ledger!
+
+Changing Shoe Data with Methods
+What are some other things we might want our application to do? As a shoe store owner, I'm sure you could think of a few...
+
+    Go On Sale: Cut a particular shoe's price by a certain percent for a special sale
+    Add Tax: Calculate the total including tax, when a customer buys a new pair of that kind of shoe
+    Cut the price by a certain amount of money (but not so it's negative!)
+    Hike the Price: Increase the price by a certain amount.
