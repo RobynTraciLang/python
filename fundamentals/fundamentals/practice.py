@@ -59,3 +59,23 @@ robyns_shoe.cut_price_by(20)
 print(robyns_shoe.price)
 robyns_shoe.on_sale_by_percent(.50)
 print(robyns_shoe.price)
+
+
+# example of chaining:
+user1.display_info().enroll().spend_points(50).display_info()
+user2.enroll().spend_points(80).display_info()
+
+class User:
+    # .. constructor
+
+    def display_info(self):
+        # your code
+
+        # new return statement, returns this same object
+        return self
+
+
+
+'''
+Note: This only works with methods that do not need to return anything. If your method needs to return something other than self, it is not possible to chain the method.
+'''
