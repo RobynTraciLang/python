@@ -62,8 +62,8 @@ print(robyns_shoe.price)
 
 
 # example of chaining:
-user1.display_info().enroll().spend_points(50).display_info()
-user2.enroll().spend_points(80).display_info()
+# user1.display_info().enroll().spend_points(50).display_info()
+# user2.enroll().spend_points(80).display_info()
 
 class User:
     # .. constructor
