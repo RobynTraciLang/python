@@ -1,6 +1,6 @@
 class bank_account:
 
-    # don't forget to add some default values for these parameters! 
+    # don't forget to add some default values for these parameters!
     # I'm leaving this here to remind myself what I was missing when I was working on this assignment.
     def __init__(self, name, interest_rate = .01, balance = 0):
         self.name = name
