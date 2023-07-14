@@ -1,0 +1,43 @@
+use books_schema;
+
+insert into users(first_name, last_name) values ("Jane", "Amsden");
+
+select * from users;
+
+insert into users(first_name, last_name) values ("Emily", "Dixon");
+insert into users(first_name, last_name) values ("Theodore", "Dostoevsky");
+insert into users(first_name, last_name) values ("William", "Shapiro");
+insert into users(first_name, last_name) values ("Lao", "Xiu");
+
+insert into books(title) value ("C Sharp");
+insert into books(title) value ("Java");
+insert into books(title) value ("Python");
+insert into books(title) value ("PHP");
+insert into books(title) value ("Ruby");
+
+select * from books;
+
+update books set title = "C#" where id = 1;
+
+update users set first_name = "Bill" where id = 4;
+
+select * from favorites;
+
+insert into favorites(user_id, book_id) 
+values (1, 1),(1, 2),(2, 1),(2, 2),(2, 3),(3, 1),(3, 2),(3, 3),(3, 4),(4, 1),(4, 2),(4, 3),(4, 4),(4, 5);
+
+-- select * from favorites
+-- join users on users.id = favorites.user_id
+-- join books on books.id = favorites.book_id
+-- order by first_name;
+
+select * from favorites where book_id = 3;
+
+delete from favorites where user_id = 2;
+
+insert into favorites(user_id, book_id) 
+values (5, 2);
+
+select * from favorites where user_id = 3;
+
+select * from favorites where book_id = 5;

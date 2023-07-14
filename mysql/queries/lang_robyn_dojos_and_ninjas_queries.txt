@@ -1,0 +1,42 @@
+USE dojos_and_ninjas;
+
+SELECT * from dojos;
+
+INSERT INTO dojos (name) VALUE ("San Francisco");
+INSERT INTO dojos (name) VALUE ("Paris");
+INSERT INTO dojos (name) VALUE ("Milan");
+
+DELETE FROM dojos WHERE id <= 3;
+
+INSERT INTO dojos (name) VALUE ("Monte Carlo");
+INSERT INTO dojos (name) VALUE ("Los Angeles");
+INSERT INTO dojos (name) VALUE ("New York");
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Robyn", "Lang", 44, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Sheppard", "Dean", 29, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Johnathan", "Hill", 32, 4);
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Marilyn", "Lang", 70, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Ronald", "Lang", 70, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Kirsten", "Hardware", 44, 5);
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Theron", "Thomas", 36, 6);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Ayitey", "Aryee", 27, 6);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Randel", "Hall", 31, 6);
+
+SELECT * FROM ninjas;
+
+SELECT * FROM ninjas WHERE dojo_id = 4;
+
+SELECT * FROM ninjas WHERE dojo_id = 6;
+
+SELECT name FROM dojos
+JOIN ninjas ON ninjas.id = dojos.id
+WHERE ninjas.id = 6;
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 6;
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id;

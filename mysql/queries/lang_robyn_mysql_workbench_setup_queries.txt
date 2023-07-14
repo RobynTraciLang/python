@@ -1,0 +1,22 @@
+SELECT * FROM names;
+
+INSERT INTO names (name)
+VALUES ("Robyn Traci Lang");
+
+INSERT INTO names (name)
+VALUES ("Marilyn Lang");
+
+INSERT INTO names (name)
+VALUES ("Johnathan Hill");
+
+INSERT INTO names (name)
+VALUES ("Kirsten Davis-Hardware");
+
+INSERT INTO names (name)
+VALUES ("Johnny Appleseed");
+
+UPDATE names 
+SET name = "Therry Thomas"
+WHERE id = 7;
+
+DELETE names FROM names WHERE id = 8;
