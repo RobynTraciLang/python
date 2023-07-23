@@ -63,3 +63,26 @@
 # print(get_digits("0s1a3y5w7h9a2t4"))
 
 # - create function clockHandAngles(seconds) that, given the number of seconds since 12:00:00, will print the angles ( in degress ) of the hour, minute and second hands. As a quick review, there are 360 degrees in a full arc rotation. Treat "stright-up" 12:00:00 as 0 degress for all hands
+
+# create a function sum_to_one(num) that, given a number, will repeatedly sum the digits until the new number is only one digit long. Return that finalonedigitnumber.
+
+# def sum_to_one(num):
+#     sum = 0
+#     final_one_digit_num = 0
+#     num_as_string = str(num)
+#     for i in num_as_string:
+#         sum += int(i)
+#         print(sum)
+#         num = sum
+#         num_as_string = str(num)
+#     final_one_digit_num = sum
+
+# sum_to_one(5789)
+
+print(5789 % 10)
+print(5789/10)
+print(5789//=10)
+print(578 % 10)
+print(578/10)
+print(29%10)
+print(29/10)

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+        font-family: 'Bruno Ace SC', cursive;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    </style>
+    <title>Result!</title>
+
+</head>
+
+<body style="background-color: #000000; color: #ffffff;">
+
+    <div class="card">
+
+        <h2>Name: {{ session['name'] }}</h2>
+        <h2>Dojo Location: {{ session['dojo_location'] }}</h2>
+        <h2>Favorite Language: {{ session['favorite_programming_language'] }}</h2>
+        <h2>Comment: {{ session['comments'] }}</h2>
+
+    </div>
+
+    <a href="/" style="text-decoration: none;"><button style="color: white; background-color: magenta; border-radius: 5px; padding: 5px 10px; font-weight: 500;">Back</button></a>
+
+</body>
+</html>

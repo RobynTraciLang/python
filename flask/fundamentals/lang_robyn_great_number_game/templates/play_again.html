@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Robyn's Great Number Game</title>
+</head>
+<body  class="text-center p-5">
+    <h1>Welcome to Robyn's Great Number Game!!!</h1>
+    <h3 class="p-5">I am thinking of a number between 1 and 100...</h3>
+    <div>
+
+    </div style="display: flex; flex-direction: column;">
+    <form action="/guess" class="bg-dark text-warning text-center p-5" method="post">
+        <label for="guessed_number">Take a guess!</label>
+        <br>
+        <input type="text" name="guessed_number">
+        <br>
+        <input type="submit" value="Guess">
+    </form>
+</body>
+</html>

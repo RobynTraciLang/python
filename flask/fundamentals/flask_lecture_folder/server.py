@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template("index.html")
 
 @app.route("/class")
 def class_names():
@@ -17,11 +17,11 @@ def hello_student(name_of_student):
 @app.route("/class/<string:name_of_students>/<int:number_of_times>")
 # will work without the "string:", but it's a good habit to form
 def hello_student_number_of_times(name_of_student, number_of_times):
-    return f'Hello {name_of_student}' * number_of_times
+    return f'Hello {name_of_student * number_of_times}!'
 
-@app.route("/index")
-def index():
-    return render_template('index.html')
+@app.route("/hello")
+def hello():
+    return render_template('hello.html', phrase="hello!", times=5)
 
 if __name__=="__main__":
     app.run(debug=True)

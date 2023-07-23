@@ -1,0 +1,10 @@
+    <p>Phrase: {{ name }}</p>
+    <p>Times: {{ num }}</p>
+
+    {% for i in range(0,num): %}
+        <p>{{ name }}</p>
+    {% endfor %}
+
+    {% if name == "hello" %}
+        <p>The phrase says hello!</p>
+    {% endif %}

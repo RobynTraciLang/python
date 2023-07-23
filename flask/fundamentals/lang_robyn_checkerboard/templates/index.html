@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <img src="{{ url_for('static', filename='assets/my_img.png') }}"> -->
+    <title>Checkerboard Assignment</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="background-color: magenta;">Say hello to Robyn's magic checkerboard!</h1>
+        <div>
+            <!-- # took out class="checkerboard" from div, there is no bootstrap in here, nor is there that class in bootstrap-->
+            <div>
+                <!-- removed the class="row" -->
+                {% for i in range(0, row) %}
+                if i%2==0
+                <div>
+                    <!-- removed the class="column" -->
+                    {% for j in range(0, column) %}
+                        if j%2==0
+                        <div style="background-color: {{color1}};"></div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+<!-- <div class="column"></div>
+<div class="column"></div>
+<div class="column"></div>
+<div class="column"></div>
+<div class="column"></div>
+<div class="column"></div>
+<div class="column"></div> -->

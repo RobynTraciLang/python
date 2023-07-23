@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flask Template Engine</title>
+</head>
+<body>
+    <h2>Robyn's Flask Template</h2>
+
+    <p>Phrase: {{ name }}</p>
+    <p>Times: {{ num }}</p>
+
+    {% for i in range(0,num): %}
+        <p>{{ name }}</p>
+    {% endfor %}
+
+    {% if name == "hello" %}
+        <p>The phrase says hello!</p>
+    {% endif %}
+
+</body>
+</html>
