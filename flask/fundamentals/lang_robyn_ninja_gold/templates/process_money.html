@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap' rel='stylesheet'>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+
+        body{
+            margin: 0 auto;
+            text-align: center;
+            background-color: navy;
+            font-family: 'Bruno Ace SC', cursive;
+            font-family: 'Poppins', sans-serif;
+            /* font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Flex', sans-serif; */
+        }
+
+        h1{
+            color: #c7f5b9;
+        }
+
+        h2{
+            background-color: fuchsia;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .preliminaries{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .forms{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .actual_forms{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            height: 150px;
+            background-color: deepskyblue;
+        }
+
+        input{
+            background-color: #c7f5b9;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .activities{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: auto;
+            height: auto;
+            background-color: deepskyblue;
+        }
+
+        .start_over{
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 2px 2px grey;
+            padding: 15px;
+            margin: 20px;
+            background-color: #c7f5b9;
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        span{
+            color: #c7f5b9;
+        }
+    </style>
+    <title>Ninja Gold</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="buildings">
+            <h1>Welcome to Robyn's Ninja Gold Game!</h1>
+            <div class="preliminaries">
+                <h2>Your Gold: <span>{{session.gold}}</span></h2>
+                <h2>Your Current Level: <span>{{session.level}}</span></h2>
+                <h2>Total Plays: <span>{{session.count_of_times_played}}</span></h2>
+                <br>
+                {% if "you_lose" in session: %}
+                    <h2 style="color: red;">Oh no!! You don't have anymore money!!</h2>
+                    <br>
+                    <h2 style="color: red;">{{session.you_lose}}</h2>
+                {% endif %}
+            </div>
+            <div class="forms">
+                <div class="actual_forms">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="farm" />
+                        <input type="hidden" name="message" value="" />
+                        <h3>Farm</h3>
+                        <p>(earns 10-20 golds)</p>
+                        <input type="submit" value="Find Gold!" />
+                    </form>
+                </div>
+                <div class="actual_forms">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="cave" />
+                        <input type="hidden" name="message" value="" />
+                        <h3>Cave</h3>
+                        <p>(earns 5-10 golds)</p>
+                        <input type="submit" value="Find Gold!" />
+                    </form>
+                </div>
+                <div class="actual_forms">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="house" />
+                        <input type="hidden" name="message" value="" />
+                        <h3>House</h3>
+                        <p>(earns 2-5 golds)</p>
+                        <input type="submit" value="Find Gold!" />
+                    </form>
+                </div>
+                <div class="actual_forms">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="casino" />
+                        <input type="hidden" name="message" value="" />
+                        <h3>Casino</h3>
+                        <p>(earns or takes 0-50 golds)</p>
+                        <input type="submit" value="Find Gold!" />
+                    </form>
+                </div>
+            </div>
+            <div class="activities">
+                <h2>Activities:</h2>
+                {% if "message" in session %}
+                    <h3>{{session.message|safe}}</h3>
+                {% endif %}
+            </div>
+            <br>
+            <a href="/clear_session" class="start_over">start over</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Create a simple game to test your understanding of Flask, and implement the functionality below.
+
+For this assignment, you're going to create a mini game that helps a ninja make some money! When you start the game, your ninja should have 0 gold. The ninja can go to different places (farm, cave, house, casino) and earn different amounts of gold. In the case of a casino, your ninja can earn or lose up to 50 gold. Your job is to create a web app that allows this ninja to earn gold and to display their past activities.
+
+The root route should display the wireframe below. There should be 4 forms on the HTML page. As an example, the farm form might look something like this:
+
+<form action="/process_money" method="post">
+    <input type="hidden" name="building" value="farm" />
+    <input type="submit" value="Find Gold!"/>
+</form>
+
+There should be a method that handles the POST request, determining how much gold the user should now have depending on their visit.
+
+Note: You should only have 2 routes for this assignment -- '/' and '/process_money' -->

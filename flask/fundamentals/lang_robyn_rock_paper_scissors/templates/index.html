@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Welcome to Robyn's Rock Paper Scissors Game!</h1>
+    <form action="/results" method="post">
+        <p>Select rock, paper, or scissors:</p>
+        <select name="user_choice" id="">
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissors">Scissors</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <strong>Your choice: {{ session['user_choice'] }}</strong>
+    <br>
+    <strong>Opponent's choice: {{ session.opponents_choice }}</strong>
+    <br>
+    <strong>Current wins: {{ session.win }}</strong>
+    <br>
+    <strong>Current losses: {{ session.lose }}</strong>
+    <br>
+    <strong>Current draws: {{ session.draw }}</strong>
+    <br>
+    <strong>Last result: {{ session.last_result }}</strong>
+    <br>
+    <h1>
+        {% for dictionary in session.outcomes %}
+            <p style="color: {{ dictionary.color }}">{{ dictionary.message }}</p>
+        {% endfor %}
+    </h1>
+    <br>
+    <a href="/clear_session">clear session</a>
+</body>
+</html>
