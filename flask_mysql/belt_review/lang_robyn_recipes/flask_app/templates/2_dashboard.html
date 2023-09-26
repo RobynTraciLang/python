@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1>Welcome, {{user.first_name}}!</h1>
+    <a href="/recipes/new">+ Create</a>
+    <a href="/logout">Logout</a>
+    <h2>All Posted Recipes:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Under 30 Minutes?</th>
+                    <th>Posted By</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for each_recipe in recipes %}
+                <tr>
+                    <td>{{each_recipe.name}}</td>
+                    {% if each_recipe.under_30_minutes == 1 %}
+                        <td>Yes</td>
+                    {% else %}
+                        <td>No</td>
+                    {% endif %}
+                    <td>{{each_recipe.user.first_name}}</td>
+                    <td>
+                        <a href='/recipes/{{each_recipe.id}}'>view recipe </a>
+                        <!-- <a href="">edit and delete conditional</a> -->
+                        {% if session['user_id'] == each_recipe.user_id %}
+                            <a href='/recipes/edit/{{each_recipe.id}}'>| edit </a>
+                            <a href='/recipes/delete/{{each_recipe.id}}'>| delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>

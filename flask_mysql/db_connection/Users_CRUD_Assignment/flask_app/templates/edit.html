@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit User {{user.id}}</h1>
+    <a href="/read_all">Home</a>
+    <br>
+    <br>
+    <form action="/update/{{user.id}}" method="post">
+        <div>
+            <label for="">First Name:</label>
+            <input type="text" name="first_name", value="{{user.first_name}}">
+        </div>
+        <div>
+            <label for="">Last Name:</label>
+            <input type="text" name="last_name" value="{{user.last_name}}">
+        </div>
+        <div>
+            <label for="">Email:</label>
+            <input type="text" name="email" value="{{user.email}}">
+        </div>
+        <br>
+            <input type="submit" name="" value="Update User!">
+
+
+    </form>
+
+    <br>
+    <a href="/read_one/{{user.id}}">Show User</a>
+</body>
+</html>

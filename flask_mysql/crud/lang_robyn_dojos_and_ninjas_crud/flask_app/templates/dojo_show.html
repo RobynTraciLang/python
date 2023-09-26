@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Show</title>
+</head>
+<body>
+    <!-- <nav>
+        <div>
+            <a href="/">Dojos and Ninjas Project</a>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/ninja/create_ninja">Add A Ninja</a>
+                </li>
+
+                <li>
+                    <a href="/dojo/create_dojo">Add A Dojo</a>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+    <div class="container">
+        <div class="row">
+            <div>
+                <h2>{{dojo.name}} Ninjas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
+                            <!-- <th>Actions</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for each_ninja in dojo.ninjas %}
+                        <tr>
+                            <td>{{each_ninja.first_name}}</td>
+                            <td>{{each_ninja.last_name}}</td>
+                            <td>{{each_ninja.age}}</td>
+                            <!-- <td><a href=""></a></td> -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+    <a href="/dojo/create_dojo">Home</a>
+</body>
+</html>

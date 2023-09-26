@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1>Add a New Recipe!</h1>
+    <a href="/recipes">back to recipes</a>
+    <br>
+    <a href="/logout">logout</a>
+    <br>
+    <br>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+            {% for message in messages %}            <!-- loop through the messages -->
+                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/recipes/new" method="post">
+        <div>
+            <label for="">Name</label>
+            <br>
+            <input type="text" name="name">
+        </div>
+        <br>
+        <div>
+            <label for="">Description</label>
+            <br>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="">Instructions</label>
+            <br>
+            <textarea name="instructions" id="" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="">Date Cooked/Made:</label>
+            <br>
+            <input type="date" name="date_made">
+        </div>
+        <br>
+        <div>
+            <label for="">Under 30 Minutes?</label>
+            <br>
+            <label for="yes">Yes</label>
+            <input type="radio" name="under_30_minutes" value="1" id="yes">
+            <label for="no">No</label>
+            <input type="radio" name="under_30_minutes" value="0" id="no">
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
